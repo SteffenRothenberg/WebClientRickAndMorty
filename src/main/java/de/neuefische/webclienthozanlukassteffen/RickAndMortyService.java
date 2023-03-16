@@ -10,12 +10,12 @@ import java.util.Objects;
 public class RickAndMortyService {
     private final WebClient webClient = WebClient.create("https://rickandmortyapi.com/api");
 
-    RickAndMortyCharacter getAllCharacters(){
-        ResponseEntity<RickAndMortyCharacter> responseEntity = webClient
+    CharacterResponse getAllCharacters(){
+        ResponseEntity<CharacterResponse> responseEntity = webClient
                 .get()
                 .uri("/character")
                 .retrieve()
-                .toEntity(RickAndMortyCharacter.class)
+                .toEntity(CharacterResponse.class)
                 .block();
 
         return Objects.requireNonNull(responseEntity).getBody();
