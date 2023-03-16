@@ -13,7 +13,7 @@ public class RickAndMortyService {
     RickAndMortyCharacter getAllCharacters(){
         ResponseEntity<RickAndMortyCharacter> responseEntity = webClient
                 .get()
-                .uri("/character")
+                .uri("/character/")
                 .retrieve()
                 .toEntity(RickAndMortyCharacter.class)
                 .block();
